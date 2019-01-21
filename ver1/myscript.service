@@ -1,0 +1,15 @@
+[Unit]
+Description=My service
+After=network.target
+
+[Service]
+User=pi
+ExecStart=/usr/bin/node /home/pi/cabal/node_modules/cabal/cli.js --seed
+WorkingDirectory=/home/pi/cabal
+StandardOutput=inherit
+StandardError=inherit
+Restart=always
+User=pi
+
+[Install]
+WantedBy=multi-user.target
